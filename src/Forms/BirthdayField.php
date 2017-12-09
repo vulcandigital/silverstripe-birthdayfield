@@ -18,7 +18,7 @@ class BirthdayField extends FormField
     /** @var string The format that will be displayed when converted to readonly */
     private static $format = 'd/m/Y';
 
-    /** @var FieldList */
+    /** @var FieldList|DropdownField[] */
     public $children;
 
     /** @var DropdownField */
@@ -86,23 +86,21 @@ class BirthdayField extends FormField
     }
 
     /**
-     * @param int $max
      * @param int $offset
      *
      * @return array
      */
-    public function getYearMap($max = 100, $offset = 0)
+    public function getYearMap($offset = 100)
     {
         $now = (int)date('Y');
         $start = $now - $offset;
+        $map = [];
 
-        $map = ["$start" => $start];
-
-        for ($i = $max; $i > 0; $i--) {
-            $year = $start - $i;
-
-            $map[$year] = $year;
+        for ($i = 0; $i <= $offset; $i++) {
+            $map[$start + $i] = $start + $i;
         }
+
+        $map = array_reverse($map);
 
         return $map;
     }
@@ -254,10 +252,10 @@ class BirthdayField extends FormField
 
         return $this;
     }
-    
+
     /**
      * Disables the day, month, year labels on each of the dropdown fields
-     * 
+     *
      * @return $this
      */
     public function disableTitles()
