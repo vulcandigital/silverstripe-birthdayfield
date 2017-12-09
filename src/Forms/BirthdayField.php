@@ -254,4 +254,18 @@ class BirthdayField extends FormField
 
         return $this;
     }
+    
+    /**
+     * Disables the day, month, year labels on each of the dropdown fields
+     * 
+     * @return $this
+     */
+    public function disableTitles()
+    {
+        foreach ($this->children as $child) {
+            $child->setTitle(null);
+        }
+
+        return $this;
+    }
 }
