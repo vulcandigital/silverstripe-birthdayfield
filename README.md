@@ -37,6 +37,12 @@ If you wish for it to render inline with columns (Bootstrap v3 required) you can
 $birthday->setBootstrapRender(true);
 ```
 
+If you want to disable the individual labels for each of the fields and leave only the main one:
+
+```php
+$birthday->disableTitles();
+```
+
 ## Configuration
 ```yml
 Vulcan\BirthdayField\Forms\BirthdayField:
