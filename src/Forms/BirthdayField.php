@@ -100,8 +100,6 @@ class BirthdayField extends FormField
             $map[$start + $i] = $start + $i;
         }
 
-        $map = array_reverse($map);
-
         return $map;
     }
 
