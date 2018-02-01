@@ -3,7 +3,7 @@
   "description": "An inline birthday field for SilverStripe",
   "type": "silverstripe-vendormodule",
   "homepage": "https://github.com/vulcandigital/silverstripe-birthdayfield",
-  "license": "BSD-3 Clause",
+  "license": "BSD-3-Clause",
   "authors": [
     {
       "name": "Reece Alexander",
